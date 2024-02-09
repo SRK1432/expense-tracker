@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <form onsubmit="event.preventDefault(); addExpense(event);">
+            <div class="image-container">
+                <img src="expense.jpg" alt="Expense">
+            </div>
+            <label for="expenseAmount">Expense Amount:</label>
+            <input type="number" id="expenseAmount" name="expenseAmount" required>
+            <br>
+            <label for="description">Description:</label>
+            <select id="description" name="description" required>
+                <option value="">Choose...</option>
+                <option value="100">Movie - On vacation</option>
+                <option value="200">fuel - diesel</option>
+                <option value="300">food - toffe</option>
+            </select>
+            <br>
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" value="funi" readonly>
+            <br>
+            <button type="submit">Add Expense</button>
+        </form>
+    </div>
+    <script>
+        function addExpense(event) {
+            const expenseAmount = event.target.expenseAmount.value;
+            const description = event.target.description.value;
+            const category = event.target.category.value;
+
+            // code to add expense here
+
+            console.log(`Expense added: ${expenseAmount} - ${description} - ${category}`);
+        }
+    </script>
+</body>
+</html>
